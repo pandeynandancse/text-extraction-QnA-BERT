@@ -110,5 +110,8 @@ from
 
 import --->>> varialbes , functions , classes
 
+----------------------------------------------------------------------------------
 
+
+automatic mixed precision --->>> helps so that model will occupy less memory so that you can use large batch size and faster training video
 
