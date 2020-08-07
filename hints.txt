@@ -1,0 +1,114 @@
+1. config.py --->> instead of transformer use tokenizers and use it's tokenizer
+
+2. define utils.py
+
+3. define dataset.py ==>> very important
+
+4. define model.py
+
+5. define engine.py
+
+6. define train.py
+
+
+
+--------------------------------------------------------------------------
+squeeze  -- removes dimension  at given index ---- squeeze() function eliminate any dimension that has size 1
+unsqueeze -- adds dimension at given index -- new dimension is variable
+reshape
+view
+flatten
+
+
+
+
+It means that torch.reshape may return a copy or a view of the original tensor. You can not count on that to return a view or a copy. According to the developer:
+
+    if you need a copy use clone() if you need the same storage use view(). The semantics of reshape() are that it may or may not share the storage and you don't know beforehand.
+
+
+
+
+Another difference is that reshape() can operate on both contiguous and non-contiguous tensor while view() can only operate on contiguous tensor.  
+If calling view() generates an error, you can fix by placing a statement like X = X.contiguous() before calling the view() function.
+
+------------------------------------------------------------------------------------------
+
+
+tensor detach cpu numpy_array list
+
+--------------------------------------------------------------------------------
+
+https://www.geeksforgeeks.org/append-extend-python/
+append  == iterables and non-itrables both can be passed as argument
+extend => only iterable like list , strings can be passed as argument mot int.
+
+
+--------------------------------------------------------------------------------------------
+
+vstack and hstack for numpy array : https://www.guru99.com/numpy-hstack-vstack.html
+
+## Vertical Stack
+import numpy as np
+f = np.array([1,2,3])
+g = np.array([4,5,6])
+
+print('Vertical Append:', np.vstack((f, g))) 
+
+ Vertical Append: [[1 2 3]
+ [4 5 6]]
+
+
+
+
+
+
+
+## Horitzontal Stack
+import numpy as np
+f = np.array([1,2,3])
+g = np.array([4,5,6])
+
+print('Horizontal Append:', np.hstack((f, g)))
+Horizontal Append: [1 2 3 4 5 6]
+
+---------------------------------------------------------------------------
+
+-1 means any -- not restricted 
+
+axis=0
+axis=1
+
+>>> import pandas as pd
+>>> srs_a = pd.Series([10,30,60,80,90])
+>>> srs_b = pd.Series([22, 44, 55, 77, 101])
+>>> df = pd.DataFrame({'a': srs_a, 'b': srs_b})
+>>> df
+    a    b
+0  10   22
+1  30   44
+2  60   55
+3  80   77
+4  90  101
+>>> df.sum(axis=0)
+a    270
+b    299
+dtype: int64
+
+
+
+>>> df.sum(axis=1)
+0     32
+1     74
+2    115
+3    157
+4    191
+dtype: int64
+
+----------------------------------------------------------------------
+from 
+
+import --->>> varialbes , functions , classes
+
+
+
